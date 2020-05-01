@@ -31,4 +31,4 @@ java -jar schemaspy-6.0.0.jar \
 -s "${1}" \
 -o "${SCHEMA_DB_DIR}/${1}"
 
-echo "Diagram successfully generated in ${SCHEMA_DB_DIR}."
+echo "Diagram successfully generated in ${SCHEMA_DB_DIR}/${1}."

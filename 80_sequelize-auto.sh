@@ -30,6 +30,6 @@ sequelize-auto \
  -x "${DBPASS}" \
  -p "${SQL_DBPORT}" \
  -e postgres \
- -o "${SEQUELIZE_MODELS_DIR}"
+ -o "${SEQUELIZE_MODELS_DIR}/${1}"
 
-echo "Model files successfully generated in ${SEQUELIZE_MODELS_DIR}."
+echo "Model files successfully generated in ${SEQUELIZE_MODELS_DIR}/${1}."
