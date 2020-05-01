@@ -111,7 +111,24 @@
 				</thead>
 				<tbody>
 				<tr>
-				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="_mobapp_id">_mobapp_id</span></td>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+				 <td>serial</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;mobapp.observations_id_seq&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="_mobapp_id">_mobapp_id</span></td>
 				 <td>text</td>
 				 <td>2147483647</td>
 				 <td title=''></td>
@@ -262,9 +279,26 @@
 				 </td>
 				 <td></td>
 				</tr>
+				<tr>
+				 <td><span id="geom">geom</span></td>
+				 <td>geometry</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
 								</tbody>
 				</table>
-				<p title='8 columns'>Table contained <span id="recordNumber">47</span> rows<p/>
+				<p title='10 columns'>Table contained <span id="recordNumber">47</span> rows<p/>
 			</div>
 		</div>
 		<div class="box box-primary">		
@@ -293,6 +327,12 @@
 				 <tr>
 				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> _mobapp_observations_pkey</td>
 				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>id</td>
+				 </tr>				 
+				 <tr>
+				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> observations__mobapp_id_key</td>
+				  <td>Must be unique</td>
 				  <td><span title='Ascending'>Asc</span></td>
 				  <td>_mobapp_id</td>
 				 </tr>				 
@@ -323,20 +363,20 @@
             <div class="tab-content no-padding">            
 				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="event_observations.html" title="event_observations" alt="" coords="499,5,724,157">
-<area shape="rect" id="node2" href="observations.html" title="observations" alt="" coords="5,145,455,449">
-<area shape="rect" id="node3" href="user_observations.html" title="user_observations" alt="" coords="505,175,718,327">
+<area shape="rect" id="node1" href="event_observations.html" title="event_observations" alt="" coords="536,5,761,157">
+<area shape="rect" id="node2" href="observations.html" title="observations" alt="" coords="5,116,492,479">
+<area shape="rect" id="node3" href="user_observations.html" title="user_observations" alt="" coords="542,175,755,327">
 </map>
 
 					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/observations.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
 				</div>
 				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="event_observations.html" title="event_observations" alt="" coords="499,15,724,167">
-<area shape="rect" id="node2" href="events.html" title="events" alt="" coords="167,5,293,93">
-<area shape="rect" id="node3" href="observations.html" title="observations" alt="" coords="5,111,455,415">
-<area shape="rect" id="node4" href="user_observations.html" title="user_observations" alt="" coords="505,272,718,424">
-<area shape="rect" id="node5" href="users.html" title="users" alt="" coords="170,432,290,520">
+<area shape="rect" id="node1" href="event_observations.html" title="event_observations" alt="" coords="536,29,761,181">
+<area shape="rect" id="node2" href="events.html" title="events" alt="" coords="185,5,312,93">
+<area shape="rect" id="node3" href="observations.html" title="observations" alt="" coords="5,111,492,473">
+<area shape="rect" id="node4" href="user_observations.html" title="user_observations" alt="" coords="542,301,755,453">
+<area shape="rect" id="node5" href="users.html" title="users" alt="" coords="189,491,309,579">
 </map>
 
 					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/observations.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							

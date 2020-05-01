@@ -52,7 +52,7 @@ import psycopg2
 from sqlalchemy import create_engine
 from shapely.geometry import Point
 import geopandas as gpd
-from folium import Map, Marker, DivIcon
+from folium import Map, Marker, Icon, DivIcon
 import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 load_dotenv()
@@ -183,20 +183,20 @@ def get_data_from_API(name='observations', USE_LOGIN=True):
     return(df1)
 ###############################################################################   
 #%%
-def plot_map(df1):
+def plot_map(df):
     """Docstring
     """
     print("Plotting points on Folium...")
     cmap = plt.get_cmap('gnuplot2')
     cmaplist = [cmap(i) for i in range(cmap.N)]
-    keys =  list(df1['description.obstacle'].unique())
+    keys =  list(df['description.obstacle'].unique())
     idx = np.arange(0,255,256/len(keys)).astype(np.int)
     cmapsublist = [cmaplist[i] for i in idx]
     cmapsublist = [tuple([int(255*el) for el in r]) for r in cmapsublist]
     colorsd = dict(zip(keys, cmapsublist))
-    df1['rgb'] = df1['description.obstacle'].map(colorsd)
-    df1['hex'] = df1['rgb'].map(lambda rgb: '#%02x%02x%02x%02x' % rgb)
-    dfp = df1[['location.longitude','location.latitude','description.obstacle','hex']].copy()
+    df['rgb'] = df['description.obstacle'].map(colorsd)
+    df['hex'] = df['rgb'].map(lambda rgb: '#%02x%02x%02x%02x' % rgb)
+    dfp = df[['location.longitude','location.latitude','description.obstacle','hex']].copy()
     dfp.dropna(axis=0, subset=['location.longitude','location.latitude'], inplace=True)
     m = Map(location=[46.77853, 6.64097],
             width=750, height=500, zoom_start=18,
