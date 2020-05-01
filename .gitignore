@@ -1,0 +1,13 @@
+dumps/*
+*model*
+logs*
+PRIVATE*
+.env*
+*.sql
+*.zip
+*.jar
+*.old
+*.properties
+00*
+90*
+.0*
