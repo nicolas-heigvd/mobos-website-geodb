@@ -1,6 +1,5 @@
-dumps/*
-*model*
-logs*
+DUMPS/*
+LOGS/*
 PRIVATE*
 .env*
 *.sql
@@ -8,6 +7,6 @@ PRIVATE*
 *.jar
 *.old
 *.properties
-00*
-90*
+.create-models.js
 .0*
+00*
