@@ -44,6 +44,10 @@ module.exports = function(sequelize, DataTypes) {
     geom: {
       type: DataTypes.ENUM(),
       allowNull: true
+    },
+    snap_geom: {
+      type: DataTypes.ENUM(),
+      allowNull: true
     }
   }, {
     tableName: 'observations'
