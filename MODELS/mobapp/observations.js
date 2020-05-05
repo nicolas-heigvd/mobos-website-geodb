@@ -31,14 +31,28 @@ module.exports = function(sequelize, DataTypes) {
     },
     _mobapp_location_latitude: {
       type: DataTypes.DOUBLE,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0.0'
     },
     _mobapp_location_longitude: {
       type: DataTypes.DOUBLE,
-      allowNull: true
+      allowNull: false,
+      defaultValue: '0.0'
     },
     _mobapp_image_imageurl: {
       type: DataTypes.TEXT,
+      allowNull: true
+    },
+    eid: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'edges',
+        key: 'id'
+      }
+    },
+    edist: {
+      type: DataTypes.REAL,
       allowNull: true
     },
     geom: {

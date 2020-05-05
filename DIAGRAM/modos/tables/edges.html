@@ -127,6 +127,22 @@
 						edges_images_edge_id_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
 					</td>
 				   </tr>
+				   <tr>
+					<td title="images.eid references edges.id via images_eid_fkey">
+						<a href='images.html'>images</a><span class='relatedKey'>.eid</span>
+					</td>
+					<td class="constraint detail">
+						images_eid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="observations.eid references edges.id via observations_eid_fkey">
+						<a href='observations.html'>observations</a><span class='relatedKey'>.eid</span>
+					</td>
+					<td class="constraint detail">
+						observations_eid_fkey <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
 				  </table>				 
 				 </td>
 				 <td>
@@ -901,7 +917,7 @@
 				 <td></td>
 				</tr>
 				<tr>
-				 <td><span id="geom">geom</span></td>
+				 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="geom">geom</span></td>
 				 <td>geometry</td>
 				 <td>2147483647</td>
 				 <td title=''></td>
@@ -951,6 +967,12 @@
 				  <td><span title='Ascending'>Asc</span></td>
 				  <td>id</td>
 				 </tr>				 
+				 <tr>
+				  <td title='Indexed'>modos_edges_geom_idx</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>geom</td>
+				 </tr>				 
 				</tbody>
 				</table>   			  
 			</div><!-- /.box-body -->
@@ -978,17 +1000,28 @@
             <div class="tab-content no-padding">            
 				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="edges_images.html" title="edges_images" alt="" coords="405,5,587,157">
-<area shape="rect" id="node2" href="edges.html" title="edges" alt="" coords="5,32,361,1480">
+<area shape="rect" id="node1" href="edges_images.html" title="edges_images" alt="" coords="833,5,1015,157">
+<area shape="rect" id="node2" href="edges.html" title="edges" alt="" coords="5,96,361,1544">
+<area shape="rect" id="node3" href="images.html" title="images" alt="" coords="640,87,789,321">
+<area shape="rect" id="node4" href="observations.html" title="observations" alt="" coords="405,175,596,380">
 </map>
 
 					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/edges.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
 				</div>
 				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="edges_images.html" title="edges_images" alt="" coords="405,695,587,847">
-<area shape="rect" id="node2" href="edges.html" title="edges" alt="" coords="5,5,361,1453">
-<area shape="rect" id="node3" href="images.html" title="images" alt="" coords="117,1471,249,1559">
+<area shape="rect" id="node1" href="descriptions.html" title="descriptions" alt="" coords="640,1125,808,1213">
+<area shape="rect" id="node2" href="observations.html" title="observations" alt="" coords="405,1180,596,1385">
+<area shape="rect" id="node4" href="edges.html" title="edges" alt="" coords="5,5,361,1453">
+<area shape="rect" id="node8" href="events.html" title="events" alt="" coords="120,1471,247,1559">
+<area shape="rect" id="node10" href="users.html" title="users" alt="" coords="123,1576,243,1664">
+<area shape="rect" id="node3" href="edges_images.html" title="edges_images" alt="" coords="876,1016,1057,1168">
+<area shape="rect" id="node5" href="images.html" title="images" alt="" coords="649,1296,799,1531">
+<area shape="rect" id="node7" href="cameras.html" title="cameras" alt="" coords="431,1403,571,1491">
+<area shape="rect" id="node6" href="externimages.html" title="externimages" alt="" coords="879,1404,1054,1492">
+<area shape="rect" id="node9" href="internimages.html" title="internimages" alt="" coords="881,1299,1053,1387">
+<area shape="rect" id="node11" href="observations_images.html" title="observations_images" alt="" coords="852,1193,1081,1281">
+<area shape="rect" id="node12" href="user_images.html" title="user_images" alt="" coords="882,1521,1051,1609">
 </map>
 
 					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/edges.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							

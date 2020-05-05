@@ -37,6 +37,22 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: '0.0'
     },
+    eid: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'edges',
+        key: 'id'
+      }
+    },
+    edist: {
+      type: DataTypes.REAL,
+      allowNull: false
+    },
+    snap_geom: {
+      type: DataTypes.ENUM(),
+      allowNull: false
+    },
     cam_id: {
       type: DataTypes.INTEGER,
       allowNull: true,

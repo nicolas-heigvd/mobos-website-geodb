@@ -179,6 +179,8 @@ def get_data_from_API(name='observations', USE_LOGIN=True):
                )
 
     df1 = pd.DataFrame.from_dict(pd.json_normalize(res1.json()))
+    if name == 'observations':
+        df1.dropna(subset=['location.longitude','location.latitude'], inplace=True)
         
     return(df1)
 ###############################################################################   
@@ -239,7 +241,7 @@ def get_tables_headers(name='observations'):
     """Docstring
     """
     if name not in ["observations", "events", "users"]:
-        print("Wrong name. Existing.")
+        print("Wrong name. Exiting.")
         return
     connector_MDS = getConnectors()
     conn  = connector_MDS()
@@ -255,7 +257,49 @@ def get_tables_headers(name='observations'):
     
 ###############################################################################   
 #%%   
-def upload_mobapp_data_to_postgres(df, name='observations'):
+def upsert_mobapp_data_to_postgres(df, name='observations'):
+    """Docstring
+    """
+    # create temporary table?
+    if name not in ["observations", "events", "users"]:
+        print("Wrong name. Existing.")
+        return
+
+    connector_MDS = getConnectors()
+    cols = list(df.columns)
+    nbCols = len(cols)
+    for idx, row in df.iterrows():
+        query_string = """
+            INSERT INTO """+"mobapp.{}".format(name)+"""
+            ("""+nbCols*'%s '+""")
+            VALUES ("""+nbCols* '%s ' +""")
+            ON CONFLICT (%s) DO 
+            UPDATE
+            SET
+            ("""+(nbCols)*'%s '+""") =
+            ("""+(nbCols)*'%s '+""")
+            WHERE %s = %s
+            """
+        sql_query = query_string
+        
+        with connector_MDS() as conn:
+                with conn.cursor() as curs:
+                    print(curs.mogrify(sql_query,
+                                       ((*cols,*row,cols[0],*cols,*row,cols[0],row[0]))))
+                    curs.execute(sql_query, ((*cols,*row,cols[0],*cols,*row,cols[0],row[0])))
+
+    return(True)
+#%%
+def update_column_names(df, name='observations'):
+    """Docstring
+    """
+    # change columns name to actually match the actual db:
+    df.columns = '_mobapp_'+df.columns
+    df.columns = df.columns.str.replace('__','_').str.replace('.','_').str.lower()
+    
+    return(df)
+#%%   
+def upload_mobapp_data_to_postgres(df, name='observations', delete_before=False):
     """ Docstring
     """
     if name not in ["observations", "events", "users"]:
@@ -264,8 +308,15 @@ def upload_mobapp_data_to_postgres(df, name='observations'):
 
     connector_MDS = getConnectors()
     engine = create_engine('postgresql+psycopg2://', creator=connector_MDS)
-    
-    # append keeps the structure, replace not (drop before):
+    if delete_before:
+        print("Deleting ALL records from table mobapp.{}".format(name))
+        drop_string = """DELETE FROM mobapp.{}""".format(name)+"""
+                         WHERE id >0; """
+        with connector_MDS() as conn:
+            with conn.cursor() as curs:
+                curs.execute(drop_string)
+        
+    # 'append' keeps the structure, 'replace' not (drop before):
     with engine.connect() as connection:       
         df.to_sql(name=name,
                   con=connection,
@@ -287,16 +338,20 @@ def sync_all(tables_headers=TAB_HEAD):
         tables[key] = get_tables_headers(name=key)
         df = get_data_from_API(name=key)
         #print("len df: {}".format(len(df.columns)))
-        # change columns name to actually match the actual db:
-        df.columns = '_mobapp_'+df.columns
-        df.columns = df.columns.str.replace('__','_').str.replace('.','_').str.lower()
+        df = update_column_names(df,name=key)
         for col in df.columns:
             if col.lower() not in tables[key]:
                 print(("Oops, column {} not in table... Exiting." ).format(col))
                 return
         #tables[key] = df
-        upload_mobapp_data_to_postgres(df, name=key)
-        print("Table {} successfully updated.".format(key))
+        UPSERT = False
+        if not UPSERT:
+            # table mobapp.* are truncated before INSERT.
+            upload_mobapp_data_to_postgres(df, name=key, delete_before=True)
+            print("Table {} successfully updated.".format(key))
+        else:
+            upload_mobapp_data_to_postgres(df, name=key)
+            print("Blah.....................".format(key))
 
     print("All data successfully uploaded.")
 
