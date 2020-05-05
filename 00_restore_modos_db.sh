@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
-USE_PG=false
+USE_PG=true
 
 eval $(egrep -v '^#' .env | xargs)
 
 if [ ${ENV} = 'DEV' ]
 then
+    echo "ENV: "${ENV}
     SQL_DBUSER="${DB_USER_DEV}" &&
     SQL_DBNAME_NEW="${DB_NAME_NEW_DEV}" &&
     SQL_SERVICE="${DB_SERVICE_RESTORE_DEV}" &&
@@ -14,6 +15,7 @@ then
 
 elif [ ${ENV} = 'PROD' ]
 then
+    echo "ENV: "${ENV}
     SQL_DBUSER="${DB_USER_PROD}" &&
     SQL_DBNAME_NEW="${DB_NAME_NEW_PROD}" &&
     SQL_SERVICE="${DB_SERVICE_RESTORE_PROD}" &&
@@ -23,9 +25,13 @@ fi
 
 echo "Restoring database in new ${SQL_DBNAME_NEW}..."
 
-dropdb -U "${SQL_DBUSER}" --if-exists "${SQL_DBNAME_NEW}" || true
-createdb -U "${SQL_DBUSER}" "${SQL_DBNAME_NEW}" --owner="${SQL_DBUSER}"
-# remove -h localhost if using peer auth
+if [ ${ENV} = 'DEV' ]
+then
+    dropdb -U "${SQL_DBUSER}" --if-exists "${SQL_DBNAME_NEW}" || true
+    createdb -U "${SQL_DBUSER}" "${SQL_DBNAME_NEW}" --owner="${SQL_DBUSER}"
+    # remove -h localhost if using peer auth
+fi
+
 if [ "${USE_PG}" = 'true' ]
 then
     echo "Using pg_retore tool..."
