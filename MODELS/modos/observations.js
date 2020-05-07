@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -37,6 +36,11 @@ module.exports = function(sequelize, DataTypes) {
     position: {
       type: DataTypes.ENUM(),
       allowNull: false
+    },
+    in_range: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
     },
     eid: {
       type: DataTypes.INTEGER,

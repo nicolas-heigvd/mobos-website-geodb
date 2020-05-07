@@ -112,11 +112,11 @@
 				<tbody>
 				<tr>
 				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
-				 <td>serial</td>
+				 <td>int4</td>
 				 <td>10</td>
 				 <td title=''></td>
-				 <td title='Automatically updated by the database'>√</td>
-				 <td>nextval(&#39;observations_id_seq&#39;::regclass)</td>
+				 <td title=''></td>
+				 <td>null</td>
 				 <td>
 				  <table border='0' cellspacing='0' cellpadding='0'>
 				   <tr>
@@ -253,6 +253,23 @@
 				 <td></td>
 				</tr>
 				<tr>
+				 <td><span id="in_range">in_range</span></td>
+				 <td>bool</td>
+				 <td>1</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>false</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
 				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="eid">eid</span></td>
 				 <td>int4</td>
 				 <td>10</td>
@@ -330,7 +347,7 @@
 				</tr>
 								</tbody>
 				</table>
-				<p title='10 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
+				<p title='11 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
 			</div>
 		</div>
 		<div class="box box-primary">		
@@ -389,33 +406,31 @@
             <div class="tab-content no-padding">            
 				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="descriptions.html" title="descriptions" alt="" coords="652,5,820,181">
-<area shape="rect" id="node2" href="observations.html" title="observations" alt="" coords="255,61,608,424">
-<area shape="rect" id="node4" href="edges.html" title="edges" alt="" coords="11,273,205,420">
-<area shape="rect" id="node5" href="events.html" title="events" alt="" coords="33,437,183,555">
-<area shape="rect" id="node6" href="users.html" title="users" alt="" coords="5,51,211,256">
-<area shape="rect" id="node3" href="images.html" title="images" alt="" coords="661,299,811,533">
-<area shape="rect" id="node7" href="observations_images.html" title="observations_images" alt="" coords="864,217,1103,369">
+<area shape="rect" id="node1" href="descriptions.html" title="descriptions" alt="" coords="652,75,820,251">
+<area shape="rect" id="node2" href="observations.html" title="observations" alt="" coords="255,69,608,461">
+<area shape="rect" id="node4" href="edges.html" title="edges" alt="" coords="11,5,205,152">
+<area shape="rect" id="node5" href="events.html" title="events" alt="" coords="33,463,183,580">
+<area shape="rect" id="node6" href="users.html" title="users" alt="" coords="5,216,211,421">
+<area shape="rect" id="node3" href="images.html" title="images" alt="" coords="657,268,815,532">
+<area shape="rect" id="node7" href="observations_images.html" title="observations_images" alt="" coords="864,89,1103,241">
 </map>
 
 					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/observations.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
 				</div>
 				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="descriptions.html" title="descriptions" alt="" coords="652,65,820,241">
-<area shape="rect" id="node2" href="ploscategories.html" title="ploscategories" alt="" coords="339,97,523,185">
-<area shape="rect" id="node3" href="observations.html" title="observations" alt="" coords="255,344,608,707">
-<area shape="rect" id="node5" href="edges.html" title="edges" alt="" coords="11,163,205,309">
-<area shape="rect" id="node9" href="events.html" title="events" alt="" coords="33,653,183,771">
-<area shape="rect" id="node11" href="users.html" title="users" alt="" coords="5,788,211,993">
-<area shape="rect" id="node4" href="edges_images.html" title="edges_images" alt="" coords="893,31,1074,119">
-<area shape="rect" id="node6" href="images.html" title="images" alt="" coords="661,259,811,493">
-<area shape="rect" id="node8" href="cameras.html" title="cameras" alt="" coords="361,239,501,327">
-<area shape="rect" id="node7" href="externimages.html" title="externimages" alt="" coords="896,175,1071,263">
-<area shape="rect" id="node10" href="internimages.html" title="internimages" alt="" coords="897,280,1069,368">
-<area shape="rect" id="node12" href="observations_images.html" title="observations_images" alt="" coords="864,404,1103,556">
-<area shape="rect" id="node13" href="user_images.html" title="user_images" alt="" coords="899,701,1068,789">
-<area shape="rect" id="node14" href="users_events.html" title="users_events" alt="" coords="345,760,518,848">
+<area shape="rect" id="node1" href="descriptions.html" title="descriptions" alt="" coords="652,113,820,289">
+<area shape="rect" id="node2" href="ploscategories.html" title="ploscategories" alt="" coords="339,90,523,178">
+<area shape="rect" id="node3" href="observations.html" title="observations" alt="" coords="255,232,608,624">
+<area shape="rect" id="node5" href="edges.html" title="edges" alt="" coords="11,156,205,302">
+<area shape="rect" id="node8" href="events.html" title="events" alt="" coords="33,824,183,941">
+<area shape="rect" id="node9" href="users.html" title="users" alt="" coords="5,601,211,806">
+<area shape="rect" id="node4" href="edges_images.html" title="edges_images" alt="" coords="893,114,1074,202">
+<area shape="rect" id="node6" href="images.html" title="images" alt="" coords="657,410,815,674">
+<area shape="rect" id="node7" href="cameras.html" title="cameras" alt="" coords="361,677,501,765">
+<area shape="rect" id="node10" href="observations_images.html" title="observations_images" alt="" coords="864,317,1103,469">
+<area shape="rect" id="node11" href="user_images.html" title="user_images" alt="" coords="899,616,1068,704">
+<area shape="rect" id="node12" href="users_events.html" title="users_events" alt="" coords="345,818,518,906">
 </map>
 
 					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/observations.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							

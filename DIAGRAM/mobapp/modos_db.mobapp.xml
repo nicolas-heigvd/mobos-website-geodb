@@ -2,7 +2,7 @@
 <database name="modos_db" schema="mobapp" type="PostgreSQL - 10.12 (Ubuntu 10.12-0ubuntu0.18.04.1)">
    <tables>
       <table name="event_observations" numRows="0" remarks="" schema="mobapp" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('event_observations_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="event_id" nullable="true" remarks="" size="2147483647" type="text">
             <parent column="_mobapp_id" foreignKey="event_observations_event_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="events"/>
          </column>
@@ -19,7 +19,7 @@
          </index>
       </table>
       <table name="events" numRows="1" remarks="" schema="mobapp" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('mobapp.events_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="_mobapp_id" nullable="false" remarks="" size="2147483647" type="text">
             <child column="event_id" foreignKey="event_observations_event_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="event_observations"/>
             <child column="event_id" foreignKey="users_events_event_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="users_events"/>
@@ -44,7 +44,7 @@
          </index>
       </table>
       <table name="observations" numRows="45" remarks="" schema="mobapp" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('mobapp.observations_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="_mobapp_id" nullable="false" remarks="" size="2147483647" type="text">
             <child column="observation_id" foreignKey="event_observations_observation_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="event_observations"/>
             <child column="observation_id" foreignKey="user_observations_observation_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="user_observations"/>
@@ -72,7 +72,7 @@
          </index>
       </table>
       <table name="user_observations" numRows="0" remarks="" schema="mobapp" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('user_observations_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="user_id" nullable="true" remarks="" size="2147483647" type="text">
             <parent column="_mobapp_id" foreignKey="user_observations_user_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="users"/>
          </column>
@@ -89,7 +89,7 @@
          </index>
       </table>
       <table name="users" numRows="0" remarks="" schema="mobapp" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('mobapp.users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="_mobapp_id" nullable="false" remarks="" size="2147483647" type="text">
             <child column="user_id" foreignKey="user_observations_user_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="user_observations"/>
             <child column="user_id" foreignKey="users_events_user_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="users_events"/>
@@ -112,7 +112,7 @@
          </index>
       </table>
       <table name="users_events" numRows="0" remarks="" schema="mobapp" type="TABLE">
-         <column autoUpdated="true" defaultValue="nextval('mobapp.users_events_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="1" name="user_id" nullable="true" remarks="" size="2147483647" type="text">
             <parent column="_mobapp_id" foreignKey="users_events_user_id_fkey" implied="false" onDeleteCascade="false" schema="mobapp" table="users"/>
          </column>
