@@ -25,4 +25,4 @@ createdb -U ${SQL_DBUSER} ${SQL_DBNAME} --owner=${SQL_DBUSER}
 psql "service=${SQL_SERVICE}" -v ON_ERROR_STOP=1 -v SQL_USER=${SQL_DBUSER} \
 -b -f "${SQL_FILE}"
 
-echo "Database successfully initialized."
+echo "Database tables successfully created."
