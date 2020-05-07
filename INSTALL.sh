@@ -16,6 +16,7 @@ then
     SQL_SERVICE="${DB_SERVICE_PROD}"
 fi
 
+bash "${PWD}"/00_init_modos_db.sh &&
 bash "${PWD}"/01_reset_modos_db.sh &&
 bash "${PWD}"/02_inject_osm_into_modos_db.sh &&
 bash "${PWD}"/03_preprocess_modos_4pgr.sh &&
