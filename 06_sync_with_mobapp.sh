@@ -20,6 +20,7 @@ then
     PYTHON_SCRIPT="${PYTHON_SCRIPT_PROD}"
 fi
 
+echo ${SQL_FILE}
 psql "service=${SQL_SERVICE}" -v ON_ERROR_STOP=1 -v SQL_USER=${SQL_DBUSER} \
     -b -f ${SQL_FILE_PRE} &&
 python3 "${PYTHON_SCRIPT}" -S &&
