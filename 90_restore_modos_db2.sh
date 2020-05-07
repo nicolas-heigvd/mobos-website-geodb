@@ -1,10 +1,9 @@
 #!/bin/bash
 set -e
-USE_PG=true
+USE_PG=false
 
 eval $(egrep -v '^#' .env | xargs)
 
-ENV=PROD
 if [ ${ENV} = 'DEV' ]
 then
     echo "ENV: "${ENV}
