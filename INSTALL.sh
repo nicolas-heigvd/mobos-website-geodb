@@ -5,13 +5,13 @@ eval $(egrep -v '^#' .env | xargs)
 
 if [ ${ENV} = 'DEV' ]
 then
-    SQL_USER="${DB_USER_DEV}" &&
+    SQL_DBUSER="${DB_USER_DEV}" &&
     SQL_DBNAME="${DB_NAME_DEV}" &&
     SQL_SERVICE="${DB_SERVICE_DEV}"
 
 elif [ ${ENV} = 'PROD' ]
 then
-    SQL_USER="${DB_USER_PROD}" &&
+    SQL_DBUSER="${DB_USER_PROD}" &&
     SQL_DBNAME="${DB_NAME_PROD}" &&
     SQL_SERVICE="${DB_SERVICE_PROD}"
 fi

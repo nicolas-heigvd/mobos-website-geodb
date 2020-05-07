@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-USE_PG=false
+USE_PG=true
 
 eval $(egrep -v '^#' .env | xargs)
 
