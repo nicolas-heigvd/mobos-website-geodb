@@ -22,5 +22,4 @@ bash "${PWD}"/02_inject_osm_into_modos_db.sh &&
 bash "${PWD}"/03_preprocess_modos_4pgr.sh &&
 bash "${PWD}"/04_modos_routing.sh &&
 bash "${PWD}"/05_modos_triggers.sh &&
-bash "${PWD}"/06_sync_with_mobapp.sh &&
-bash "${PWD}"/07_snap_observations_to_edges.sh
+bash "${PWD}"/06_sync_with_mobapp.sh
