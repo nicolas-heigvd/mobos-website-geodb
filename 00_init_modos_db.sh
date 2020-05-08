@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-eval $(egrep -v '^#' .env | xargs)
+source .env
 
 if [ ${ENV} = 'DEV' ]
 then

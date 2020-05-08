@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-eval $(egrep -v '^#' .env | xargs)
+source .env
 
 rm -rf "${SCHEMA_DB_DIR}/${1}"
 mkdir -p "${SCHEMA_DB_DIR}/${1}"

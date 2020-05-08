@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-eval $(egrep -v '^#' .env | xargs)
+source .env
 
 rm -rf "${SEQUELIZE_MODELS_DIR}/${1}"
 mkdir -p "${SEQUELIZE_MODELS_DIR}/${1}"
