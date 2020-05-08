@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>modos_db Database</title>
+  <title>modos_geo Database</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
@@ -46,7 +46,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="index.html" class="navbar-brand"><b>modos_db</b> Database</a>
+          <a href="index.html" class="navbar-brand"><b>modos_geo</b> Database</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -106,31 +106,9 @@
 				</thead>
 				<tbody>
 					<tr>
-					 <td>event_observations</td>
-					 <td>Table</td>
-					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>event_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>event_observations</td>
-					 <td>Table</td>
-					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
 					 <td>users</td>
 					 <td>Table</td>
-					 <td>_mobapp_gender</td>
+					 <td>_mobapp_helperfrequency</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -142,50 +120,6 @@
 					 <td>users</td>
 					 <td>Table</td>
 					 <td>_mobapp_helper</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp_updatedat</td>
-					 <td>timestamptz</td>
-					 <td>35</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp_password</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td>_mobapp_image_imageurl</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -207,54 +141,21 @@
 					<tr>
 					 <td>users</td>
 					 <td>Table</td>
-					 <td>_mobapp_age</td>
-					 <td>int4</td>
-					 <td>10</td>
+					 <td>_mobapp_events</td>
+					 <td>_text</td>
+					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
 					 <td title=''></td>
 					 <td>null</td>
 					 <td></td>
 					</tr>
 					<tr>
-					 <td>observations</td>
+					 <td>user_observations</td>
 					 <td>Table</td>
-					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>_mobapp_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>_mobapp_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td>_mobapp_location_longitude</td>
-					 <td>float8</td>
-					 <td>17</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>0.0</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td>eid</td>
+					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
 					 <td>int4</td>
 					 <td>10</td>
-					 <td title='nullable'>√</td>
+					 <td title=''></td>
 					 <td title=''></td>
 					 <td>null</td>
 					 <td></td>
@@ -271,6 +172,17 @@
 					 <td></td>
 					</tr>
 					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>_mobapp_id</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
 					 <td>observations</td>
 					 <td>Table</td>
 					 <td>_mobapp_description_impact</td>
@@ -282,20 +194,42 @@
 					 <td></td>
 					</tr>
 					<tr>
+					 <td>users</td>
+					 <td>Table</td>
+					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>_mobapp_id</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>users</td>
+					 <td>Table</td>
+					 <td>_mobapp_email</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>user_observations</td>
+					 <td>Table</td>
+					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>user_id</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
 					 <td>observations</td>
 					 <td>Table</td>
-					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>geom</td>
-					 <td>geometry</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>users</td>
-					 <td>Table</td>
-					 <td>_mobapp_helperfrequency</td>
+					 <td>_mobapp_description_freetext</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -304,22 +238,55 @@
 					 <td></td>
 					</tr>
 					<tr>
-					 <td>event_observations</td>
+					 <td>observations</td>
 					 <td>Table</td>
-					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>observation_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
+					 <td>_mobapp_location_latitude</td>
+					 <td>float8</td>
+					 <td>17</td>
 					 <td title=''></td>
-					 <td>null</td>
+					 <td title=''></td>
+					 <td>0.0</td>
 					 <td></td>
 					</tr>
 					<tr>
-					 <td>users</td>
+					 <td>events</td>
 					 <td>Table</td>
-					 <td>_mobapp_events</td>
+					 <td>_mobapp_observations</td>
 					 <td>_text</td>
 					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td>_mobapp_owner</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td>_mobapp_image_imageurl</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>users</td>
+					 <td>Table</td>
+					 <td>_mobapp_age</td>
+					 <td>int4</td>
+					 <td>10</td>
 					 <td title='nullable'>√</td>
 					 <td title=''></td>
 					 <td>null</td>
@@ -339,116 +306,6 @@
 					<tr>
 					 <td>users</td>
 					 <td>Table</td>
-					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>_mobapp_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp_observations</td>
-					 <td>_text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp_beginning</td>
-					 <td>timestamptz</td>
-					 <td>35</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>user_observations</td>
-					 <td>Table</td>
-					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>observation_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp_createdat</td>
-					 <td>timestamptz</td>
-					 <td>35</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>user_observations</td>
-					 <td>Table</td>
-					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td>_mobapp_description_obstacle</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>user_observations</td>
-					 <td>Table</td>
-					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>user_id</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td>edist</td>
-					 <td>float4</td>
-					 <td>8</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>users</td>
-					 <td>Table</td>
-					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>users</td>
-					 <td>Table</td>
 					 <td>_mobapp_pseudonym</td>
 					 <td>text</td>
 					 <td>2147483647</td>
@@ -458,9 +315,31 @@
 					 <td></td>
 					</tr>
 					<tr>
+					 <td>users</td>
+					 <td>Table</td>
+					 <td>_mobapp_gender</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>event_observations</td>
+					 <td>Table</td>
+					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>event_id</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
 					 <td>observations</td>
 					 <td>Table</td>
-					 <td>snap_geom</td>
+					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>geom</td>
 					 <td>geometry</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -469,9 +348,9 @@
 					 <td></td>
 					</tr>
 					<tr>
-					 <td>users_events</td>
+					 <td>events</td>
 					 <td>Table</td>
-					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>user_id</td>
+					 <td>_mobapp_title</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -491,53 +370,9 @@
 					 <td></td>
 					</tr>
 					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp_numberofimages</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
 					 <td>users_events</td>
 					 <td>Table</td>
-					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
-					 <td>int4</td>
-					 <td>10</td>
-					 <td title=''></td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>observations</td>
-					 <td>Table</td>
-					 <td>_mobapp_description_freetext</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
-					 <td title=''></td>
-					 <td>null</td>
-					 <td></td>
-					</tr>
-					<tr>
-					 <td>events</td>
-					 <td>Table</td>
-					 <td>_mobapp__v</td>
+					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>event_id</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -559,7 +394,117 @@
 					<tr>
 					 <td>users_events</td>
 					 <td>Table</td>
-					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>event_id</td>
+					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>event_observations</td>
+					 <td>Table</td>
+					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>users_events</td>
+					 <td>Table</td>
+					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>user_id</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td>_mobapp_location_longitude</td>
+					 <td>float8</td>
+					 <td>17</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>0.0</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td>edist</td>
+					 <td>float4</td>
+					 <td>8</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td>snap_geom</td>
+					 <td>geometry</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>observations</td>
+					 <td>Table</td>
+					 <td>eid</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td>_mobapp_updatedat</td>
+					 <td>timestamptz</td>
+					 <td>35</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td>_mobapp_beginning</td>
+					 <td>timestamptz</td>
+					 <td>35</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>event_observations</td>
+					 <td>Table</td>
+					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>observation_id</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -570,9 +515,9 @@
 					<tr>
 					 <td>events</td>
 					 <td>Table</td>
-					 <td>_mobapp_title</td>
-					 <td>text</td>
-					 <td>2147483647</td>
+					 <td>_mobapp_createdat</td>
+					 <td>timestamptz</td>
+					 <td>35</td>
 					 <td title='nullable'>√</td>
 					 <td title=''></td>
 					 <td>null</td>
@@ -581,7 +526,62 @@
 					<tr>
 					 <td>observations</td>
 					 <td>Table</td>
-					 <td>_mobapp_owner</td>
+					 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i>_mobapp_id</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td>_mobapp_numberofimages</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td>_mobapp_password</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td>_mobapp__v</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>events</td>
+					 <td>Table</td>
+					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title=''></td>
+					 <td title=''></td>
+					 <td>null</td>
+					 <td></td>
+					</tr>
+					<tr>
+					 <td>user_observations</td>
+					 <td>Table</td>
+					 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>observation_id</td>
 					 <td>text</td>
 					 <td>2147483647</td>
 					 <td title='nullable'>√</td>
@@ -592,10 +592,10 @@
 					<tr>
 					 <td>users</td>
 					 <td>Table</td>
-					 <td>_mobapp_email</td>
-					 <td>text</td>
-					 <td>2147483647</td>
-					 <td title='nullable'>√</td>
+					 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i>id</td>
+					 <td>int4</td>
+					 <td>10</td>
+					 <td title=''></td>
 					 <td title=''></td>
 					 <td>null</td>
 					 <td></td>
@@ -603,12 +603,12 @@
 					<tr>
 					 <td>observations</td>
 					 <td>Table</td>
-					 <td>_mobapp_location_latitude</td>
-					 <td>float8</td>
-					 <td>17</td>
+					 <td>_mobapp_description_obstacle</td>
+					 <td>text</td>
+					 <td>2147483647</td>
+					 <td title='nullable'>√</td>
 					 <td title=''></td>
-					 <td title=''></td>
-					 <td>0.0</td>
+					 <td>null</td>
 					 <td></td>
 					</tr>
 								</tbody>

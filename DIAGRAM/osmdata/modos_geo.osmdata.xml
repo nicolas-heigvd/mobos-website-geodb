@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="modos_db" schema="osmdata" type="PostgreSQL - 10.12 (Ubuntu 10.12-0ubuntu0.18.04.1)">
+<database name="modos_geo" schema="osmdata" type="PostgreSQL - 10.12 (Ubuntu 10.12-0ubuntu0.18.04.1)">
    <tables>
       <table name="osm_edges" numRows="22523" remarks="" schema="osmdata" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('osm_edges_ogc_fid_seq'::regclass)" digits="0" id="0" name="ogc_fid" nullable="false" remarks="" size="10" type="serial"/>
