@@ -269,24 +269,23 @@ def upsert_mobapp_data_to_postgres(df, name='observations'):
     cols = list(df.columns)
     nbCols = len(cols)
     for idx, row in df.iterrows():
-        query_string = """
-            INSERT INTO """+"mobapp.{}".format(name)+"""
-            ("""+nbCols*'%s '+""")
-            VALUES ("""+nbCols* '%s ' +""")
-            ON CONFLICT (%s) DO 
-            UPDATE
-            SET
-            ("""+(nbCols)*'%s '+""") =
-            ("""+(nbCols)*'%s '+""")
-            WHERE %s = %s
-            """
+        query_string = ("INSERT INTO "+"mobapp.{}".format(name)+
+            "("+nbCols*'%s '+") "
+            "VALUES ("+nbCols* '%s ' +") "
+            "ON CONFLICT (%s) DO "
+            "UPDATE "
+            "SET "
+            "("+(nbCols)*'%s '+") = "
+            "("+(nbCols)*'%s '+") "
+            "WHERE %s = %s")
         sql_query = query_string
         
         with connector_MDS() as conn:
-                with conn.cursor() as curs:
-                    print(curs.mogrify(sql_query,
-                                       ((*cols,*row,cols[0],*cols,*row,cols[0],row[0]))))
-                    curs.execute(sql_query, ((*cols,*row,cols[0],*cols,*row,cols[0],row[0])))
+            with conn.cursor() as curs:
+                # table names get singles quoted ?! ffs !!!
+                print(curs.mogrify(sql_query,
+                                   ((*cols,*row,cols[0],*cols,*row,cols[0],row[0]))))
+                curs.execute(sql_query, ((*cols,*row,cols[0],*cols,*row,cols[0],row[0])))
 
     return(True)
 #%%
