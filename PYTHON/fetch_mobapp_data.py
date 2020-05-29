@@ -86,7 +86,7 @@ TAB_HEAD = ["observations", "events"]
 
 env_path = os.path.join(dirname(dirname(abspath(__file__))),'.env')
 env_json_path = os.path.join(dirname(dirname(abspath(__file__))),'.env.json')
-load_dotenv(dotenv_path=env_path)
+load_dotenv(dotenv_path=env_path, override=True)
 
 ENV_KEYS = (
     "ENV",
@@ -111,7 +111,7 @@ with open(env_json_path) as json_file:
 #%%
 def getConnectors(modos_geo=True):
     env_path = os.path.join(dirname(getcwd()),'.env')
-    load_dotenv(dotenv_path=env_path)
+    load_dotenv(dotenv_path=env_path, override=True)
     env = os.getenv("ENV")
     DEBUG = False
     if os.getenv("DEBUG").lower()=='true':
