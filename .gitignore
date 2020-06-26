@@ -1,6 +1,7 @@
 DUMPS/*
 LOGS/*
 PRIVATE*
+SQL/
 .env*
 *.sql
 *.zip
